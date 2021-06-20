@@ -1,19 +1,26 @@
 import React from "react";
-import { motion } from "framer-motion";
+import Header from 'components/Header/Header.js';
+import Home from 'components/Home/Home.js';
+
+import { 
+  BrowserRouter,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 
 
 export default function App() {
 
   return (
-   <div className="">
-  <motion.div
-    animate={{ rotate: 360 }}
-    transition={{ duration: 2 }}
-  >
-      Hello World
+    <BrowserRouter>
+    <Header />
 
-  </motion.div>
-
-   </div>
+    <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+    </Switch>
+   </BrowserRouter>
   );
 }
