@@ -4,7 +4,7 @@ export default function Home() {
 
     return (
         <div className="home">
-            <div className="filter-white"></div>
+            {/* <div className="filter-white"></div> */}
 
 
 

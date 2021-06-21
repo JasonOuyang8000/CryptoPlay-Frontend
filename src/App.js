@@ -20,6 +20,13 @@ export default function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route>
+
+        </Route>
+
+        <Route>
+          
+        </Route>
     </Switch>
    </BrowserRouter>
   );
