@@ -1,0 +1,17 @@
+// Header
+header {
+    background: transparent;
+    min-height: 3rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+}
+
+.brand-title {
+    h1 {
+        font-size: 20px;
+        color: var(--logo-text-color);
+        font-weight: 600;
+    }
+}

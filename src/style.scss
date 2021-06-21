@@ -1,8 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 
+
+:root {
+    --bg-home:  linear-gradient(to bottom left, #D8FEAD, #17AB94);
+    --bg-home-moz: -moz-linear-gradient(top right, #D8FEAD, #17AB94);
+    --bg-home-webkit: -webkit-linear-gradient(top right, #D8FEAD, #17AB94);
+    --bg-filter: #ffffff;
+    --bg-header: #ffffff;
+    --text-color: #000000;
+    --logo-text-color: #1a3d26;
+}
+
+
+
+
+
+
 body {
     font-family: 'Work Sans', sans-serif;
+    font-size: 10px;
+    position: relative;
+    color: var(--text-color);
+}
 
+.home {
+    min-height: 100vh;   
+    background: var(--bg-home);
+    background: var(--bg-home-moz);
+    background: var(--bg-home-webkit);
 
 }
+
+.filter-white {
+    height: 100%;
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    background: var(--bg-filter);
+    opacity: 0.50;
+}
+
+
 
