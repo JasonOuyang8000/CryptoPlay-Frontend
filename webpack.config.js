@@ -37,6 +37,7 @@ module.exports = {
         components: path.resolve(__dirname, 'src/components/'),
         helpers: path.resolve(__dirname, 'src/helpers/'),
         context: path.resolve(__dirname, 'src/context/'),
+        images: path.resolve(__dirname, 'src/assets/images/'),
       },
     },
     watch: true,

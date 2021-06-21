@@ -1,4 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Ubuntu:wght@700&display=swap');
+
 .jumbotron {
     background: #fff;
     min-height: 70rem;
+    
+
+    .jumbotron-left {
+        height: 70rem;
+    }
+
+    #intro-text {
+        font-family: 'Ubuntu', sans-serif;
+
+        font-size: 5rem;
+    }
 }
