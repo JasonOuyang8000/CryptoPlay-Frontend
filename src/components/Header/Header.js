@@ -11,20 +11,18 @@ export default function Header() {
                    <div className="brand-title me-4">
                         
                         
-                        <h1>CrytoPlay</h1>
+                        <h1>CryptoPlay</h1>
                    </div>
                     <ul className="navlinks">
                         <li>
                             <Link to="/" activeClassName="active-nav">Home</Link>
-                          
-                          
-
                         </li>
-                        <li>
-                            <Link to="/about" activeClassName="active-nav">About</Link>
-                        </li>
+                   
                         <li>
                             <Link to="/cryptos" activeClassName="active-nav">Cryptos</Link>
+                        </li>
+                        <li>
+                            <Link to="/about" activeClassName="active-nav">Signup</Link>
                         </li>
 
                     </ul>

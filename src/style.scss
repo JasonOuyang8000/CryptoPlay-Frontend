@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
+    font-size: 10px;
     --bg-home:  linear-gradient(to bottom left, #D8FEAD, #17AB94);
     --bg-home-moz: -moz-linear-gradient(top right, #D8FEAD, #17AB94);
     --bg-home-webkit: -webkit-linear-gradient(top right, #D8FEAD, #17AB94);
@@ -19,7 +20,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 10px;
+
     position: relative;
     color: var(--text-color);
 }
