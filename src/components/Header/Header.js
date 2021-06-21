@@ -8,10 +8,10 @@ export default function Header() {
         <header>
             <div className="container">
                 <nav className="d-flex nav align-items-center">   
-                   <div className="brand-title me-4">
+                   <div className="brand-title me-5">
                         
                         
-                        <h1>CryptoPlay</h1>
+                        <h1>Crypto Play</h1>
                    </div>
                     <ul className="navlinks">
                         <li>
@@ -22,11 +22,11 @@ export default function Header() {
                             <Link to="/cryptos" activeClassName="active-nav">Cryptos</Link>
                         </li>
                         <li>
-                            <Link to="/about" activeClassName="active-nav">Signup</Link>
+                            <Link to="/about" activeClassName="active-nav">About</Link>
                         </li>
 
                     </ul>
-
+                    
                 </nav>
             </div>
         </header>

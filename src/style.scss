@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 
 :root {
     font-size: 10px;
@@ -9,8 +9,9 @@
     --bg-filter: #ffffff;
     --bg-header: #ffffff;
     --text-color: #000000;
-    --logo-text-color: #1a3d26;
-    --active-nav: rgb(174, 248, 174);
+    --logo-text-color: #39eb39;
+    --active-nav: #39eb39;
+    --nav-text-color: #899488;
 }
 
 
@@ -19,7 +20,7 @@
 
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif !important;
 
     position: relative;
     color: var(--text-color);
