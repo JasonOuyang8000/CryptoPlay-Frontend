@@ -11,14 +11,14 @@ export default function Jumbotron() {
      
                 <div className="row h-100">
                     <div className="col-8 jumbotron-left d-flex align-items-center">
-                        <img src={Rocket} alt="Rocket" />
+                       
                         <h1 id="intro-text">
                             Always Shoot For the Moon.
                         </h1>
-
+                   
                     </div>
-                    <div className="col-4">
-
+                    <div className="col-4 jumbotron-right">
+                        <img src={Rocket} alt="Rocket" />
                     </div>
                 </div>
             </div>

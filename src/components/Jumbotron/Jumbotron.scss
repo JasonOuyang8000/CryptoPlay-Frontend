@@ -7,11 +7,23 @@
 
     .jumbotron-left {
         height: 70rem;
+        justify-content: center;
+    
+        
+    }
+
+    .jumbotron-right {
+        display: flex;
+        align-items: center;
+        img {
+            width: 250px;
+            height: 450px;
+        }
     }
 
     #intro-text {
         font-family: 'Ubuntu', sans-serif;
-
-        font-size: 5rem;
+        text-align: center;
+        font-size: 6.5rem;
     }
 }
