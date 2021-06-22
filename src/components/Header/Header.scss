@@ -22,7 +22,7 @@ header {
 
 .navlinks {
     display: flex;
- 
+
 
     li {
         margin-right: 20px;
@@ -54,4 +54,22 @@ header {
         height: 3px;
         background-color: var(--active-nav);
     }
+
+ 
+}
+
+
+.login-signup {
+   
+    button {
+        font-size: 1.6rem;
+        margin-right: 1rem;
+        padding: 10px;
+        border-radius: 5px; 
+        background: var(--logo-text-color);
+        color: var(--nav-button-color);
+        border: 0;
+        
+    }
+
 }
