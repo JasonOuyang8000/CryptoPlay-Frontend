@@ -13,7 +13,7 @@ export default function Jumbotron() {
                     <div className="col-12 col-md-8 jumbotron-left d-flex ">
                        
                         <h1 id="intro-text">
-                            Always Shoot For the Moon.
+                            Always Shooting For the Moon.
                         </h1>
                    
                     </div>
