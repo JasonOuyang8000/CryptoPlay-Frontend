@@ -21,14 +21,13 @@ export default function App(props) {
     <Switch>
   
 
-      <>
     
-        <Route exact path="/">
-          <Home />
-        </Route>
-      </>
+      <Route exact path="/">
+        <Home />
+      </Route>
+
     
-      <Route exact path="/login">
+      <Route path="/login">
         <Login />
       </Route>
       <Route exact path="/signup">
