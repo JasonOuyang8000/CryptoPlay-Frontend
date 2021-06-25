@@ -1,3 +1,44 @@
 .fixed-height {
     min-height: 100vh;
 }
+
+.form-overlay {
+    height: 100vh;
+
+    .form-overlay-left {
+        background: var(--bg-home-webkit);
+
+        img {
+            opacity: 0.85;
+            height: 100%;
+            width: 90%;
+           
+        }
+
+        .card {
+            width: 250px;
+            border-radius: 5px;
+            height: 200px;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 4rem;
+            color: var(--bg-text-color);
+        }
+
+        p {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: var(--bg-text-color);
+        }
+    }
+
+    .form-overlay-right {
+        h1 {
+            font-size: 4rem;
+            color: var(--logo-text-color);
+        }
+    }
+}
