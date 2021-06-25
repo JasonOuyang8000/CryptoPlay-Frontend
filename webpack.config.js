@@ -53,7 +53,10 @@ module.exports = {
     },
     watch: true,
 
-  
+    devServer: {
+      historyApiFallback: true,
+    }
+    
  
  
 };

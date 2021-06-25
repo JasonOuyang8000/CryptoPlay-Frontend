@@ -1,5 +1,4 @@
 import React from "react";
-import Header from 'components/Header/Header.js';
 import Home from 'components/Home/Home.js';
 import Login from 'components/Login/Login.js';
 
@@ -11,25 +10,33 @@ import {
 
 
 
-export default function App() {
+export default function App(props) {
 
   return (
     <BrowserRouter>
-    <Header />
+
+
+    
 
     <Switch>
+  
+
+      <>
+    
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-       <Route exact path="/signup">
+      </>
+    
+      <Route exact path="/login">
+        <Login />
+      </Route>
+      <Route exact path="/signup">
 
-        </Route>
-        <Route>
+      </Route>
+      <Route>
           
-        </Route>
+      </Route>
     </Switch>
    </BrowserRouter>
   );
