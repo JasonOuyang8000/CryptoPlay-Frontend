@@ -8,7 +8,7 @@ export default function AuthFormOverlay({children}) {
 
     return (
         <div className="form-overlay d-flex">
-        <div className="form-overlay-left d-flex flex-column align-items-center justify-content-center col-6">
+        <div className="form-overlay-left d-flex flex-column align-items-center justify-content-center col-7">
 
             <h1>Crypto Play</h1>
             <div className="card shadow">
@@ -16,13 +16,13 @@ export default function AuthFormOverlay({children}) {
        
             </div>
             <p>
-                "It's not just a Hustle. It's the future"
+                "It's not just a Hustle. It's the future."
             </p>
             
         </div>
 
        
-        <div className="form-overlay-right col-6 d-flex flex-column align-items-center justify-content-center">
+        <div className="form-overlay-right col-5 d-flex flex-column align-items-center justify-content-center">
             {children}
         </div>
 
