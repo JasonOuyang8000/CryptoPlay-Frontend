@@ -1,4 +1,4 @@
-export default function Layout({children}) {
+export default function LayoutFixed({children}) {
 
     return (
         <div className="fixed-height">

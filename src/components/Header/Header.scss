@@ -69,7 +69,13 @@ header {
         background: var(--logo-text-color);
         color: var(--nav-button-color);
         border: 0;
-        
+
+
+        a {
+            color: var(--nav-button-color);
+            text-decoration: none;
+            font-weight: 400;
+        }
     }
 
 }

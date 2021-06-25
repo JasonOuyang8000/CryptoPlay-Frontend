@@ -1,6 +1,7 @@
 import React from "react";
 import Header from 'components/Header/Header.js';
 import Home from 'components/Home/Home.js';
+import Login from 'components/Login/Login.js';
 
 import { 
   BrowserRouter,
@@ -21,10 +22,10 @@ export default function App() {
           <Home />
         </Route>
         <Route exact path="/login">
-
+          <Login />
         </Route>
        <Route exact path="/signup">
-          
+
         </Route>
         <Route>
           

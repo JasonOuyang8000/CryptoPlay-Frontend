@@ -27,8 +27,9 @@ export default function Header() {
 
                     </ul>
                     <ul className="d-flex ms-auto login-signup">
-                        <li><button className="shadow">Login</button></li>
-                        <li><button className="shadow">Signup</button></li>
+                   
+                        <li><button className="shadow"><Link to="/" >Login</Link></button></li>
+                        <li><button className="shadow"><Link to="/" >Sign up</Link></button></li>
                     </ul>
 
 
