@@ -61,21 +61,17 @@ header {
 
 .login-signup {
    
-    button {
+    a {
         font-size: 1.6rem;
         margin-right: 1rem;
         padding: 10px;
         border-radius: 5px; 
         background: var(--logo-text-color);
-        color: var(--nav-button-color);
         border: 0;
-
-
-        a {
-            color: var(--nav-button-color);
-            text-decoration: none;
-            font-weight: 400;
-        }
+        color: var(--nav-button-color);
+        text-decoration: none;
+        font-weight: 400;
+       
     }
 
 }

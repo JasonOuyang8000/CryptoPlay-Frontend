@@ -1,6 +1,8 @@
 import React from "react";
 import Home from 'components/Home/Home.js';
 import Login from 'components/Login/Login.js';
+import Signup from 'components/Signup/Signup.js';
+
 
 import { 
   BrowserRouter,
@@ -31,7 +33,7 @@ export default function App(props) {
         <Login />
       </Route>
       <Route exact path="/signup">
-
+        <Signup/>
       </Route>
       <Route>
           

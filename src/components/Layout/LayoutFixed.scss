@@ -7,12 +7,27 @@
 
     .form-overlay-left {
         background: var(--bg-home-webkit);
-
+       
+   
         img {
             opacity: 0.85;
             height: 100%;
             width: 90%;
            
+        }
+
+        .card-go-back {
+            background: var(--bg-text-color);
+            padding: 15px;
+            border-radius: 5px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+
+            a {
+                text-decoration: none;
+                font-size: 1.6rem;
+            }
         }
 
         .card {
@@ -54,7 +69,8 @@
     fieldset {
         display: flex;
         align-items: center;
-     
+
+        input[type=number],
         input[type=text],
         input[type=password] {
             border-top: 0;
