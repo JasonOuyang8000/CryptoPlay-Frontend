@@ -1,0 +1,25 @@
+.coin-card {
+    min-height: 175px;
+    width: 100%;
+    background: var(--bg-text-color);
+    border-radius: 5px;
+
+    img {
+        height: 64px;
+        width: 64px;
+        object-fit: contain;
+    }
+
+    h3 {
+        font-size: 2.6rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+.random-cards {
+    position: relative;
+    top: -120px;
+}
