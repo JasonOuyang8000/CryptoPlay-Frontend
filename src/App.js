@@ -14,9 +14,10 @@ import {
 
 export default function App(props) {
 
-  const {loaded, setLoaded} = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
-  
+ 
+
 
   
 
@@ -24,10 +25,10 @@ export default function App(props) {
 
     
     <BrowserRouter>
-        {!loaded ? <Loader /> : null }
+        {!loaded && <Loader />}
         <Switch>
           <Route exact path="/">
-            <Home loaded={loaded} setLoaded={setLoaded}/>
+            <Home setLoaded={setLoaded}/>
           </Route>
 
     
