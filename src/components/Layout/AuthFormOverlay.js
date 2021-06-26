@@ -10,9 +10,9 @@ export default function AuthFormOverlay({children}) {
     return (
         <div className="form-overlay row p-0 m-0">
         <div className="form-overlay-left d-flex flex-column align-items-center justify-content-center col-12 col-md-7">
-            <div className="card-go-back shadow-lg">
-                <Link to="/">Back to Home</Link>
-            </div>
+            <Link to="/" className="card-go-back shadow-lg">
+               Back to Home
+            </Link>
             <h1>Crypto Play</h1>
             <div className="card shadow">
             <img src={DogeCoin} alt="dogecoin" />

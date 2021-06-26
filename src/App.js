@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Home from 'components/Home/Home.js';
 import Login from 'components/Login/Login.js';
 import Signup from 'components/Signup/Signup.js';
-
+import Loader from 'components/Loader/Loader.js';
 
 import { 
   BrowserRouter,
@@ -14,31 +14,33 @@ import {
 
 export default function App(props) {
 
-  return (
-    <BrowserRouter>
+  const {loaded, setLoaded} = useState(false);
 
-
-    
-
-    <Switch>
   
 
-    
-      <Route exact path="/">
-        <Home />
-      </Route>
+  
+
+  return (
 
     
-      <Route path="/login">
-        <Login />
-      </Route>
-      <Route exact path="/signup">
-        <Signup/>
-      </Route>
-      <Route>
-          
-      </Route>
-    </Switch>
+    <BrowserRouter>
+        {!loaded ? <Loader /> : null }
+        <Switch>
+          <Route exact path="/">
+            <Home loaded={loaded} setLoaded={setLoaded}/>
+          </Route>
+
+    
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/signup">
+            <Signup/>
+          </Route>
+          <Route>
+              
+          </Route>
+        </Switch>
    </BrowserRouter>
   );
 }
