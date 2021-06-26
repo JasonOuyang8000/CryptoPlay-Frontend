@@ -15,7 +15,7 @@ export default function Header() {
                    </div>
                     <ul className="navlinks">
                         <li>
-                            <Link to="/" activeClassName="active-nav">Home</Link>
+                            <Link exact={true} to="/" activeClassName="active-nav">Home</Link>
                         </li>
                    
                         <li>
