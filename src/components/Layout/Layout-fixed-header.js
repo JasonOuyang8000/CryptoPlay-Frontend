@@ -8,9 +8,9 @@ export default function LayoutFixedHeader({children}) {
         
         <div className="fixed-height">
             <Header />
-            <div className="container">
-                {children}
-            </div>
+          
+            {children}
+           
         </div>
     );
 }

@@ -1,6 +1,7 @@
 .fixed-height {
     min-height: 100vh;
     position: relative;
+    background: var(--bg-text-color);
 }
 
 .form-overlay {
