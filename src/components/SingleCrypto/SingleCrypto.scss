@@ -31,6 +31,8 @@
 }
 
 .section {
+    h1,
+    h2,
     h3 {
         font-size: 2.4rem;
         margin-bottom: 2rem;
@@ -42,5 +44,36 @@
         margin-bottom: 2rem;
         line-height: 3rem;
         color: var(--article-text-color);
+    }
+
+    .menu-section {
+        display: flex;
+  
+        justify-content: space-around;
+        .menu-item {
+            opacity: 0.3;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .menu-item-active {
+            opacity: 1;
+           &:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--active-nav);
+           } 
+           transition: 0.4s ease-in;
+        }
+        margin-bottom: 3rem;
+        cursor: pointer;
+        .navlinks .active-nav {
+            position: relative;
+            color: var(--text-color);
+        }
     }
 }

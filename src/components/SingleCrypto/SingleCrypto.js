@@ -13,6 +13,7 @@ const HtmlToReactParser = require('html-to-react').Parser;
 export default function SingleCrypto() {
 
     const [page, setPage] = useState({});
+    const [active, setActive] = useState('Price');
     const {id} = useParams();
 
     const htmlParser = new HtmlToReactParser();
@@ -26,7 +27,13 @@ export default function SingleCrypto() {
         .catch(error => console.log(error));
     }, []);
 
-    console.log(page)
+
+
+    const changeActive = (e,activeState) => {
+        if (active !== activeState) {
+            setActive(activeState);
+        }
+    }
     
     return (
         <>
@@ -42,7 +49,17 @@ export default function SingleCrypto() {
                 </div>
 
                 <div className="section">
-
+                    <div className="menu-section">
+                        <div onClick={e => changeActive(e,'Price')} className={`menu-item ${active === 'Price' ? 'menu-item-active': ''}`}>
+                            Price
+                        </div>
+                        <div onClick={e => changeActive(e,'Description')} className={`menu-item ${active === 'Description' ? 'menu-item-active': ''}`}>
+                            Description
+                        </div>
+                        <div onClick={e => changeActive(e,'Graph')} className={`menu-item ${active === 'Graph' ? 'menu-item-active': ''}`}>
+                            Graph
+                        </div>
+                    </div>
                     {page.description === null ? <p className="text-center">No Description Available</p> : 
                     page.description === htmlParser.parse(page.description) ? <p>{page.description}</p>
                     : htmlParser.parse(page.description)
