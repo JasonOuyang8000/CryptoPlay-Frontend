@@ -5,18 +5,18 @@ import LayoutFixedHeader from 'components/Layout/Layout-fixed-header';
 import { useEffect, useState } from 'react/cjs/react.development';
 import { useParams } from 'react-router-dom';
 import JumbotronCrypto from 'components/Jumbotron/JumbotronCrypto';
-const HtmlToReactParser = require('html-to-react').Parser;
 
 
+import RenderComp from 'components/RenderComp/RenderComp';
 
 
 export default function SingleCrypto() {
 
     const [page, setPage] = useState({});
-    const [active, setActive] = useState('Price');
+    const [active, setActive] = useState('Stats');
     const {id} = useParams();
 
-    const htmlParser = new HtmlToReactParser();
+
 
     useEffect(() => {
         fetch(`${process.env.BACKEND}/crypto/${id}`)
@@ -50,8 +50,8 @@ export default function SingleCrypto() {
 
                 <div className="section">
                     <div className="menu-section">
-                        <div onClick={e => changeActive(e,'Price')} className={`menu-item ${active === 'Price' ? 'menu-item-active': ''}`}>
-                            Price
+                        <div onClick={e => changeActive(e,'Stats')} className={`menu-item ${active === 'Stats' ? 'menu-item-active': ''}`}>
+                            Stats
                         </div>
                         <div onClick={e => changeActive(e,'Description')} className={`menu-item ${active === 'Description' ? 'menu-item-active': ''}`}>
                             Description
@@ -60,13 +60,15 @@ export default function SingleCrypto() {
                             Graph
                         </div>
                     </div>
-                    {page.description === null ? <p className="text-center">No Description Available</p> : 
-                    page.description === htmlParser.parse(page.description) ? <p>{page.description}</p>
-                    : htmlParser.parse(page.description)
+
+                    {
+                        <RenderComp active={active} page={page} />
                     }
 
-
+                   
                 </div>
+
+               
             </div>
        
         </LayoutFixedHeader>

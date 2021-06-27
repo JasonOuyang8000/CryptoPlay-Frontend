@@ -1,3 +1,6 @@
+
+@import './../../variables.scss';
+
 .bg-container {
     height: 100%;
     width: 100%;
@@ -48,7 +51,8 @@
 
     .menu-section {
         display: flex;
-  
+        margin-bottom: 8rem;
+        cursor: pointer;
         justify-content: space-around;
         .menu-item {
             opacity: 0.3;
@@ -69,11 +73,69 @@
            } 
            transition: 0.4s ease-in;
         }
-        margin-bottom: 3rem;
-        cursor: pointer;
+
         .navlinks .active-nav {
             position: relative;
             color: var(--text-color);
+        }
+    }
+
+
+    .stats-container {
+        h3 {
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -15px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: var(--active-nav);
+            }
+            align-self: center;
+        }
+
+        .line-right {
+            border-right: solid var(--logo-text-color);
+            @media screen and (max-width: $lg) {
+                border-right: unset;
+            }
+        }
+
+        .stats-box {
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+            align-items: center;
+
+        }
+
+    
+        .stats-column {
+            width: 90%;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-around;
+          
+            svg {
+                color: var(--logo-text-color);
+            }
+            p {
+                margin: unset;
+                text-align: center;
+                font-weight: 800;
+                font-size: 2.1rem;
+                color: var(--text-color);
+            }
+            h2 {
+                font-size: 1.8rem;
+                margin: unset;
+                color: var(--article-text-color);
+            }
+            border-bottom: 1px solid var(--logo-text-color);
         }
     }
 }
