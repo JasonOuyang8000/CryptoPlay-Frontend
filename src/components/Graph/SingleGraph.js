@@ -30,9 +30,9 @@ export default function SingleGraph({uuid}) {
         return history;
     }
 
- 
+
     const graphData = {
-        labels: loadLabels(data.map(single => moment(single).format('MM/DD/YYYY'))),
+        labels: data.map(single => moment.unix(single.timestamp).format('MM/DD/YYYY')),
         datasets: [
           {
             label: 'Change in Price',
@@ -61,10 +61,7 @@ export default function SingleGraph({uuid}) {
           ],
           xAxes:[{
             type: 'time',
-            time: {
-                unit: 'day',
-                tooltipFormat: 'MMM DD' 
-            }
+          
           }]
         },
         responsive: true,
