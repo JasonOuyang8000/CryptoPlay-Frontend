@@ -1,4 +1,4 @@
-import { faCoins, faDollarSign, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCoins, faDollarSign, faExchangeAlt, faLongArrowAltDown, faLongArrowAltUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 const HtmlToReactParser = require('html-to-react').Parser;
@@ -7,6 +7,7 @@ export default function RenderCom({active,page}) {
     const htmlParser = new HtmlToReactParser();
     page.price = parseFloat(page.price).toFixed(6);
     page.btcPrice = parseFloat(page.btcPrice).toFixed(6);
+    page.increase = page.change > 0;
     console.log(page);
     switch(active) {
         case 'Stats':
@@ -34,12 +35,13 @@ export default function RenderCom({active,page}) {
                                 </div>
                             </div>
                             <div className="stats-column">
-                                <div className="col-4   d-flex align-items-center">
+                                <div className="col-4  d-flex align-items-center ">
                                     <FontAwesomeIcon className="me-5" icon={faExchangeAlt} size='2x' />
                                     <h2>Change</h2>
                                 </div>
-                                <div className="col-8">
-                                    <p>{page.btcPrice}</p>
+                                <div className="col-8 align-items-center d-flex justify-content-center">
+                                    <p className={page.increase ? 'price-green' : 'price-red'}>{page.btcPrice}</p>
+                                    <FontAwesomeIcon size='2x' className={page.increase ? 'price-green' : 'price-red'} icon={page.increase ? faLongArrowAltUp : faLongArrowAltDown} />
                                 </div>
                             </div>
 
