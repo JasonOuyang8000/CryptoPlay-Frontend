@@ -146,6 +146,9 @@
                 color: var(--article-text-color);
             }
             border-bottom: 1px solid var(--logo-text-color);
+            &:last-child {
+                border-bottom: unset;
+            }
         }
     }
 }
