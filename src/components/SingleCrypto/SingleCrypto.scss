@@ -110,7 +110,15 @@
             flex-direction: column;
             min-height: 400px;
             align-items: center;
+            position: relative;
+            p {
+                margin-bottom: unset;
+            }
 
+            .custom-place {
+                position: absolute;
+                top: 190px;
+            }
         }
 
     
@@ -149,6 +157,15 @@
             &:last-child {
                 border-bottom: unset;
             }
+
+         
         }
+
+
+  
+ 
+        
+     
+
     }
 }
