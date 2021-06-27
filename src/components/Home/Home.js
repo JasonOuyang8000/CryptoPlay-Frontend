@@ -38,7 +38,7 @@ export default function Home({setLoaded}) {
 
     }, []);
 
-
+    
     return (
         <>
 
@@ -54,6 +54,8 @@ export default function Home({setLoaded}) {
                                 <Link 
                                 to={`/cryptos/${coin.uuid}`}
                                 className="coin-card p-3 shadow-lg">
+                                <div style={{background: coin.color}} className="card-bg">
+                                </div>
                                 <div className="card-container">
                                     <div className="mb-4 d-flex align-items-center justify-content-center">
                                         <img className="me-3" src={coin.iconUrl} alt={coin.symbol}/>    
@@ -64,6 +66,7 @@ export default function Home({setLoaded}) {
                                         <p className="me-2">${coin.price}</p>
                                          <FontAwesomeIcon icon={coin.increase ? faLongArrowAltUp : faLongArrowAltDown} />
                                     </div>
+
                                 </div>
 
                                 </Link>

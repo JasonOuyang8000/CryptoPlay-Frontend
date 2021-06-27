@@ -8,9 +8,19 @@
     flex-direction: column;
     justify-content: center;
     text-decoration: none;
+    position: relative;
     color: var(--text-color);
     &:hover {
         box-shadow: 0rem 1rem 3rem rgba(170, 169, 169, 0.781) !important;
+    }
+
+    .card-bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0.05;
+        z-index: 1;
+        border-radius: 5px;
     }
 
     img {
