@@ -6,6 +6,7 @@ import React from 'react';
 
 import StatsContainer from 'components/StatsContainer/StatsContainer';
 import Description from 'components/Description/Description';
+import SingleGraph from 'components/Graph/SingleGraph';
 
 export default function RenderCom({active,page}) {
 
@@ -20,8 +21,8 @@ export default function RenderCom({active,page}) {
             return <Description page={page} />
             
         case 'Graph':
-           return null;
-        default: 
+           return page.uuid === null ? null : <SingleGraph uuid={page.uuid}/>
+  
 
     }
 
