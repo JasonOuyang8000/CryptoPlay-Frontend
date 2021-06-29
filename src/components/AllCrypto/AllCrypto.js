@@ -17,7 +17,8 @@ export default function AllCrypto() {
         fetch(`${process.env.BACKEND}/crypto/all?offset=${offset}`)
         .then(res=> res.json())
         .then(data => {
-            console.log(data);
+            setData(data.data.coins);
+           
             setPageCount(Math.ceil(data.data.stats.total / 50));
         })
         .catch(error => console.log(error));
@@ -42,26 +43,29 @@ export default function AllCrypto() {
     return (
        <LayoutFixedHeader>
         <div className="container">
-        <CryptoTable data={data} />
+          <div className="crypto-table">
+          <CryptoTable data={data} />
 
 
   
-        <ReactPaginate
-          previousLabel={'previous'}
-          nextLabel={'next'}
-          breakLabel={'...'}
-          breakClassName={'break-me'}
-          pageCount={pageCount}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={2}
-          onPageChange={handlePageClick}
-          containerClassName={'pagination'}
-          activeClassName={'active'}
-        />
+            <ReactPaginate
+              previousLabel={'previous'}
+              nextLabel={'next'}
+              breakLabel={'...'}
+              breakClassName={'break-me'}
+              pageCount={pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={2}
+              onPageChange={handlePageClick}
+              containerClassName={'pagination'}
+              activeClassName={'active'}
+            />
 
 
 
-        </div>
+            </div>
+            </div>
+      
     
 
        </LayoutFixedHeader>

@@ -1,3 +1,46 @@
 .crypto-table {
     min-height: 700px;
+    position: relative;
+    top: 120px;
+  
+
+    th {
+        font-weight: 800;
+        font-size: 1.8rem;
+        color: var(--logo-text-color);
+       
+    }
+
+    td {
+        color: var(--article-text-color);
+        font-weight: 400;
+        font-size: 1.4rem;
+        padding: 20px;
+    }
+
+  
+
+    .td-2 {
+      
+        display: flex;
+        align-items: center;
+    }
+
+    .td-3 {
+        width: 30%;
+    }
+
+    .td-4 {
+        width: 30%;
+    }
+  
+    tr {
+        border-bottom: 1px solid var(--logo-text-color);
+        
+    }
+
+    img {
+        height: 30px;
+        width: 30px;
+    }
 }
