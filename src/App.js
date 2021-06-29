@@ -4,6 +4,7 @@ import Login from 'components/Login/Login.js';
 import Signup from 'components/Signup/Signup.js';
 import Loader from 'components/Loader/Loader.js';
 import SingleCrypto from 'components/SingleCrypto/SingleCrypto.js';
+import AllCrypto from 'components/AllCrypto/AllCrypto.js';
 import { 
   BrowserRouter,
   Switch,
@@ -28,7 +29,6 @@ export default function App(props) {
         {!loaded && <Loader />}
         <Switch>
           <Route exact path="/cryptos/:id">
-              
               <SingleCrypto/>
           </Route>
           <Route exact path="/">
@@ -39,6 +39,11 @@ export default function App(props) {
           </Route>
           <Route path="/signup">
             <Signup/>
+          </Route>
+
+          <Route exact path="/cryptos">
+            <AllCrypto />
+
           </Route>
         
         </Switch>

@@ -15,7 +15,7 @@ export default function StatsContainer({page}) {
     const prices = (page.supply ?  [page.supply.total - page.supply.circulating, page.supply.circulating] : [0, 1]).map(price => parseFloat(price).toFixed(4))
 
 
-
+    
     const data = {
         labels: ['Non-Circulating', 'Circulating'],
         datasets: [

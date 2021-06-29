@@ -1,0 +1,23 @@
+.pagination {
+    padding: 10px;
+
+    li {
+        
+     
+        margin-right: 15px;
+        cursor: pointer;
+
+        a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            padding: 15px;
+            box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+        }
+    }
+
+    li.active {
+        background: var(--logo-text-color);
+        color: var(--bg-text-color);
+    }
+}

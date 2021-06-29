@@ -22,7 +22,10 @@ export default function SingleCrypto() {
         fetch(`${process.env.BACKEND}/crypto/${id}`)
         .then(res => res.json())
         .then(data => {
+         
             data.supply.total = data.supply.total === null ? data.supply.circulating : data.supply.total;
+            data.supply.circulating = data.supply.circulating === null ? 0 : data.supply.circulating;
+        
             setPage(data);
         })
         .catch(error => console.log(error));
@@ -37,8 +40,7 @@ export default function SingleCrypto() {
     }
     
     return (
-        <>
-
+       
         <LayoutFixedHeader>
             <JumbotronCrypto page={page} />
             <div className="container">
@@ -73,6 +75,6 @@ export default function SingleCrypto() {
             </div>
        
         </LayoutFixedHeader>
-        </>
+    
     );
 }
