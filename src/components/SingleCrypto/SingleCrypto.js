@@ -22,6 +22,7 @@ export default function SingleCrypto() {
         fetch(`${process.env.BACKEND}/crypto/${id}`)
         .then(res => res.json())
         .then(data => {
+            data.supply.total = data.supply.total === null ? data.supply.circulating : data.supply.total;
             setPage(data);
         })
         .catch(error => console.log(error));

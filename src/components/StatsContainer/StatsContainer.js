@@ -9,6 +9,8 @@ export default function StatsContainer({page}) {
     page.increase = page.change > 0;    
     
 
+    
+
 
     const prices = (page.supply ?  [page.supply.total - page.supply.circulating, page.supply.circulating] : [0, 1]).map(price => parseFloat(price).toFixed(4))
 
