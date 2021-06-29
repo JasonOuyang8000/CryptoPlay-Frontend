@@ -27,6 +27,7 @@ export default function AllCrypto() {
 
     useEffect(() => {
       fetchCryptos();
+      window.scrollTo(0, 0);
     },[ offset ]);
 
 
@@ -44,6 +45,19 @@ export default function AllCrypto() {
        <LayoutFixedHeader>
         <div className="container">
           <div className="crypto-table">
+
+          <ReactPaginate
+              previousLabel={'previous'}
+              nextLabel={'next'}
+              breakLabel={'...'}
+              breakClassName={'break-me'}
+              pageCount={pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={2}
+              onPageChange={handlePageClick}
+              containerClassName={'pagination'}
+              activeClassName={'active'}
+            />
           <CryptoTable data={data} />
 
 

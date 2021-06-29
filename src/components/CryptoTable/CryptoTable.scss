@@ -1,14 +1,19 @@
+
 .crypto-table {
-    min-height: 700px;
+    
     position: relative;
     top: 120px;
-  
+ 
+    .table {
+        min-height: 1000px;
+        margin-top: 4rem;
+    }
 
     th {
         font-weight: 800;
         font-size: 1.8rem;
         color: var(--logo-text-color);
-       
+        text-align: center;
     }
 
     td {
@@ -16,24 +21,22 @@
         font-weight: 400;
         font-size: 1.4rem;
         padding: 20px;
+        text-align: center;
+        
     }
 
   
 
     .td-2 {
+
+        img {
+           vertical-align: middle;
+        }
       
-        display: flex;
-        align-items: center;
+
     }
 
-    .td-3 {
-        width: 30%;
-    }
-
-    .td-4 {
-        width: 30%;
-    }
-  
+    
     tr {
         border-bottom: 1px solid var(--logo-text-color);
         
@@ -42,5 +45,54 @@
     img {
         height: 30px;
         width: 30px;
+    }
+
+    .link-table {
+        padding: 10px;
+        background: var(--logo-text-color);
+        color: var(--bg-text-color);
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    @media screen and (max-width: 640px) {
+        .col-price,
+        .col-price-change {
+            display: none;
+        }
+
+    
+
+        .pagination {
+            flex-wrap: wrap;
+
+            li {
+                margin-bottom: 20px;
+            }
+        }
+
+      
+    }
+
+    @media screen and (max-width: 996px) {
+      
+
+        .col-market {
+            display: none;
+        }
+
+        td {
+            font-size: 1.4rem;
+        }
+
+        .td-5 {
+            display: flex;
+       
+
+            a {
+                line-height: 2rem;
+                width: 100%;
+            }
+        }
     }
 }
