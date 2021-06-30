@@ -1,10 +1,15 @@
+import { faLongArrowAltDown, faLongArrowAltRight, faLongArrowAltUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './CryptoTable.scss';
 
 
 export default function CrytpoTable({data}) {
-   
+    
+
+
+
 
     return (
         
@@ -22,13 +27,15 @@ export default function CrytpoTable({data}) {
                 <tbody>
                     {
                         data.map(coin => {
+                         coin.increase = parseFloat(coin.change) > 0;
+
                          return (
                             <tr key={coin.uuid}>
                                 <td className="td-1"><span>{coin.rank}</span></td>
                                 <td className="td-2"><img className="me-3 " src={coin.iconUrl} alt={coin.name} /><span>{coin.name} </span></td>
                                 <td className="td-3 col-price"><span>${parseFloat(coin.price).toFixed(6)}</span></td>
                                 <td className="td-4 col-market"><span>{parseFloat(coin.marketCap).toFixed(6)}</span></td>
-                                <td className="col-price-change"><span>${parseFloat(coin.change).toFixed(6)}</span></td>
+                                <td className="col-price-change"><span className={`${coin.increase ? 'green' : 'red'}`}>${parseFloat(coin.change).toFixed(6)} {coin.increase ? <FontAwesomeIcon icon={faLongArrowAltUp} />: <FontAwesomeIcon icon={faLongArrowAltDown} /> } </span></td>
                                 <td className="td-5"><Link className="link-table shadow" to={`cryptos/${coin.uuid}`}>More Info</Link></td>
                             </tr>
                          );  
