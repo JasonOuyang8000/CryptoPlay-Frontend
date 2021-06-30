@@ -11,6 +11,7 @@ export default function AllCrypto() {
     const [data, setData] = useState([]);
     const [offset, setOffSet] = useState(0);
     const [pageCount,setPageCount] = useState(0);
+    const [selected, setSelected] = useState(null);
 
 
     const fetchCryptos = () => {
@@ -33,13 +34,13 @@ export default function AllCrypto() {
 
     const handlePageClick = (data) => {
        
-        setOffSet(data.selected * 50);
-
+      setOffSet(data.selected * 50);
+      setSelected(data.selected);
 
         
     }
 
- 
+
 
     return (
        <LayoutFixedHeader>
@@ -57,6 +58,7 @@ export default function AllCrypto() {
               onPageChange={handlePageClick}
               containerClassName={'pagination'}
               activeClassName={'active'}
+              forcePage={selected}
             />
           <CryptoTable data={data} />
 
@@ -73,6 +75,7 @@ export default function AllCrypto() {
               onPageChange={handlePageClick}
               containerClassName={'pagination'}
               activeClassName={'active'}
+              forcePage={selected}
             />
 
 
