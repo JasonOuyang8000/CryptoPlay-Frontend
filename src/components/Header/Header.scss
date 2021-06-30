@@ -1,3 +1,5 @@
+@import './../../variables.scss';
+
 
 // Header
 header {
@@ -24,7 +26,9 @@ header {
 .navlinks {
     display: flex;
 
-
+    @media screen and (max-width: $md) {
+        display: none;
+    }
     li {
         margin-right: 20px;
 
@@ -56,12 +60,15 @@ header {
         background-color: var(--active-nav);
     }
 
+
+
+
  
 }
 
 
 .login-signup {
-   
+    display: flex;
     a {
         font-size: 1.6rem;
         margin-right: 1rem;
@@ -72,7 +79,24 @@ header {
         color: var(--nav-button-color);
         text-decoration: none;
         font-weight: 400;
-       
+     
+    }
+
+
+
+    @media screen and (max-width: $md) {
+        display: none;
+    }
+}
+
+.menu-toggler {
+    padding: 10px;
+    border-radius: 5px;
+
+    background: var(--logo-text-color);
+
+    svg {
+        color: var(--bg-text-color);
     }
 
 }

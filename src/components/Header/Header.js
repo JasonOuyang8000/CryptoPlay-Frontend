@@ -1,9 +1,15 @@
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { NavLink as Link } from "react-router-dom";
 import "./Header.scss";
 
 
 export default function Header() {
+
+    const [showMenu, setShowMenu] = useState(false);
+
+
     return (
         <header>
             <div className="container">
@@ -26,12 +32,17 @@ export default function Header() {
                         </li>
 
                     </ul>
-                    <ul className="d-flex ms-auto login-signup">
+                    <ul className="ms-auto login-signup">
                    
                         <li><Link className="shadow" to="/login" >Login</Link></li>
                         <li><Link className="shadow" to="/signup" >Sign up</Link></li>
                     </ul>
+                    <div className="menu-toggler d-md-none ms-auto shadow">
+                        <FontAwesomeIcon className="" icon={faBars} size="2x" />
 
+                    </div>
+                    
+                  
 
                 </nav>
             </div>
