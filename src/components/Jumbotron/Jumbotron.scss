@@ -5,16 +5,20 @@
 .jumbotron {
     background: #fff;
     min-height: 70rem;
-    
+  
 
     .jumbotron-left {
         height: 70rem;
         justify-content: center;
         align-items: center;
+
+       
         @media screen and (max-width: $md) {
             height: 50rem;
             margin-top: 5rem;
         }
+
+        
     }
 
     .jumbotron-right {
@@ -38,6 +42,9 @@
             top: 370px;
            }
         }
+
+
+      
     }
 
     #intro-text {
@@ -48,7 +55,7 @@
 
         @media screen and (max-width: $md) { 
 
-            font-size: 4.5rem;
+            font-size: 4rem;
         }
 
     }

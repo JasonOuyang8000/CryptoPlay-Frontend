@@ -36,25 +36,30 @@ header {
     .search-bar {
         font-size: 1.6rem;
         .search-form {
-            
+          
             input[type=text] {
+                opacity: 0.4;
                 border: 0;
                 background: transparent;
                 outline: none;
                 padding-bottom: 5px;
-                border-bottom: 2px solid var(--text-color);
-
+                border-bottom: 2px solid var(--logo-text-color);;
                 &:focus {
-                    border-bottom: var(--logo-text-color) 2px solid;
+               
+                    opacity: 1;
+    
                 }
+            
             }
 
+          
         
     
             button {
                 border: 0;
                 background: transparent;
                 font-size: 1rem;
+                color: var(--logo-text-color);
             }
             display: flex;
 

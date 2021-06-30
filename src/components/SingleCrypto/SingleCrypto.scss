@@ -34,6 +34,8 @@
 }
 
 .section {
+
+
     h1,
     h2,
     h3 {
@@ -161,6 +163,11 @@
          
         }
 
+    }
+
+    @media screen and (max-width: $md) {
+        padding: 5px;
+        
     }
 }
 

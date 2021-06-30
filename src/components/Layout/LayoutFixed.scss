@@ -1,3 +1,5 @@
+@import './../../variables.scss';
+
 .fixed-height {
     min-height: 100vh;
     position: relative;
@@ -53,6 +55,10 @@
             color: var(--bg-text-color);
             text-align: center;
         }
+
+        @media screen and (max-width: $sm) {
+            display: none !important;
+        }
     }
 
     .form-overlay-right {
@@ -61,6 +67,8 @@
             color: var(--logo-text-color);
         }
     }
+
+  
 }
 
 
