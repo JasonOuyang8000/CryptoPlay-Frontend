@@ -50,6 +50,7 @@ module.exports = {
         helpers: path.resolve(__dirname, 'src/helpers/'),
         context: path.resolve(__dirname, 'src/context/'),
         images: path.resolve(__dirname, 'src/assets/images/'),
+        hooks: path.resolve(__dirname, 'src/hooks/'),
       },
     },
     watch: true,

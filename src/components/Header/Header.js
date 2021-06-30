@@ -1,7 +1,7 @@
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { NavLink as Link } from "react-router-dom";
+import { NavLink as Link, useHistory } from "react-router-dom";
 import "./Header.scss";
 
 
@@ -9,8 +9,26 @@ export default function Header() {
 
     const [showMenu, setShowMenu] = useState(false);
 
+    const [searchInput, setSearchInput] = useState('');
+
+    const history = useHistory();
+
     const toggleMenu = () => {
         setShowMenu(!showMenu);
+    }
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+
+        history.push(`/cryptos?q=${searchInput}`);
+        
+        setSearchInput('');
+
+    }
+
+    const handleInput = (e) => {
+        const {value} = e.target;
+        setSearchInput(value);
     }
 
     return (
@@ -44,8 +62,8 @@ export default function Header() {
                         <li className="me-3">
 
                         <div className="ms-auto search-bar">
-                        <form className="search-form">
-                            <input placeholder="Search Crypto" type="text" />
+                        <form onSubmit={handleSearch} className="search-form">
+                            <input placeholder="Search Crypto" type="text" onChange={handleInput} value={searchInput}/>
 
                             <button>
                                 <FontAwesomeIcon icon={faSearch} size="2x" />    
@@ -69,22 +87,22 @@ export default function Header() {
 
                 </nav>
                 {
-                        showMenu && 
-                        <ul className="menu shadow p-4">
-                            <li>
-                                <Link exact={true} to="/" activeClassName="active-nav">Home</Link>
-                            </li>
-                    
-                            <li>
-                                <Link to="/cryptos" activeClassName="active-nav">Cryptos</Link>
-                            </li>
-                            <li>
-                                <Link to="/about" activeClassName="active-nav">About</Link>
-                            </li>
-                            <li><Link to="/login" >Login</Link></li>
-                            <li><Link to="/signup" >Sign up</Link></li>
+                    showMenu && 
+                    <ul className="menu shadow p-4">
+                        <li>
+                            <Link exact={true} to="/" activeClassName="active-nav">Home</Link>
+                        </li>
+                
+                        <li>
+                            <Link to="/cryptos" activeClassName="active-nav">Cryptos</Link>
+                        </li>
+                        <li>
+                            <Link to="/about" activeClassName="active-nav">About</Link>
+                        </li>
+                        <li><Link to="/login" >Login</Link></li>
+                        <li><Link to="/signup" >Sign up</Link></li>
 
-                        </ul>
+                    </ul>
                     }
             </div>
         </header>

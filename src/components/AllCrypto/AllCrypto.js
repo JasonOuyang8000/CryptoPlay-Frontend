@@ -4,6 +4,9 @@ import LayoutFixedHeader from 'components/Layout/Layout-fixed-header.js';
 import CryptoTable from 'components/CryptoTable/CryptoTable.js';
 import './AllCrypto.scss';
 
+import useQuery from 'hooks/QueryParams.js';
+import { useHistory } from 'react-router-dom';
+
 
 
 export default function AllCrypto() {
@@ -11,7 +14,13 @@ export default function AllCrypto() {
     const [data, setData] = useState([]);
     const [offset, setOffSet] = useState(0);
     const [pageCount,setPageCount] = useState(0);
-    const [selected, setSelected] = useState(null);
+    const [selected, setSelected] = useState(0);
+
+    const history = useHistory();
+    let query = useQuery();
+
+
+
 
 
     const fetchCryptos = () => {
@@ -23,20 +32,41 @@ export default function AllCrypto() {
             setPageCount(Math.ceil(data.data.stats.total / 50));
         })
         .catch(error => console.log(error));
-
     }
 
     useEffect(() => {
       fetchCryptos();
       window.scrollTo(0, 0);
+
+      history.push(`/cryptos?p=${selected}`);
+
+ 
+      
     },[ offset ]);
+
+    useEffect(() => {
+      if (parseInt(query.get('p')) ) {
+        setOffSet(parseInt(query.get('p')) * 50);
+
+        setSelected(parseInt(query.get('p')));
+      } 
+
+           
+      if(query.get('q')) {
+        history.push(`/cryptos?q=${query.get('q')}`);
+      }
+    
+     
+    } , [])
+
 
 
     const handlePageClick = (data) => {
        
       setOffSet(data.selected * 50);
       setSelected(data.selected);
-
+     
+      
         
     }
 
