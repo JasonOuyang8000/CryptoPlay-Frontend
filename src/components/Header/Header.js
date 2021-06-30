@@ -1,4 +1,4 @@
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { NavLink as Link } from "react-router-dom";
@@ -35,12 +35,31 @@ export default function Header() {
                         </li>
 
                     </ul>
+
+
+                  
+
+
                     <ul className="ms-auto login-signup">
-                   
+                        <li className="me-3">
+
+                        <div className="ms-auto search-bar">
+                        <form className="search-form">
+                            <input placeholder="Search Crypto" type="text" />
+
+                            <button>
+                                <FontAwesomeIcon icon={faSearch} size="2x" />    
+                            </button>
+                        </form>
+                      
+                        
+                    </div>
+                        </li>
                         <li><Link className="shadow" to="/login" >Login</Link></li>
                         <li><Link className="shadow" to="/signup" >Sign up</Link></li>
+                        
                     </ul>
-                    <div onClick={toggleMenu} className="menu-toggler d-md-none ms-auto shadow">
+                    <div onClick={toggleMenu} className="menu-toggler d-lg-none ms-auto shadow">
                         <FontAwesomeIcon className="" icon={faBars} size="2x" />
 
                     </div>

@@ -33,6 +33,36 @@ header {
         }
     }
 
+    .search-bar {
+        font-size: 1.6rem;
+        .search-form {
+            
+            input[type=text] {
+                border: 0;
+                background: transparent;
+                outline: none;
+                padding-bottom: 5px;
+                border-bottom: 2px solid var(--text-color);
+
+                &:focus {
+                    border-bottom: var(--logo-text-color) 2px solid;
+                }
+            }
+
+        
+    
+            button {
+                border: 0;
+                background: transparent;
+                font-size: 1rem;
+            }
+            display: flex;
+
+        }
+
+    
+    }
+
 }
 
 .brand-title {
@@ -49,7 +79,7 @@ header {
 .navlinks {
     display: flex;
 
-    @media screen and (max-width: $md) {
+    @media screen and (max-width: $lg) {
         display: none;
     }
     li {
@@ -107,7 +137,7 @@ header {
 
 
 
-    @media screen and (max-width: $md) {
+    @media screen and (max-width: $lg) {
         display: none;
     }
 }
