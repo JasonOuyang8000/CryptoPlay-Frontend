@@ -10,6 +10,29 @@ header {
     width: 100%;
     padding: 1rem;
     z-index: 999;
+
+
+    .menu {
+        margin-top: 1rem;
+        background: var(--bg-text-color);
+        a {
+            font-size: 1.4rem;
+            text-decoration: none;
+        }
+        
+        li {
+            margin-bottom: 1rem;
+        }
+
+        @media screen and (min-width: $md) {
+            display: none;
+        }
+
+        .active-nav {
+            color: var(--active-nav);
+        }
+    }
+
 }
 
 .brand-title {

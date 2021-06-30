@@ -1,6 +1,6 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { NavLink as Link } from "react-router-dom";
 import "./Header.scss";
 
@@ -9,6 +9,9 @@ export default function Header() {
 
     const [showMenu, setShowMenu] = useState(false);
 
+    const toggleMenu = () => {
+        setShowMenu(!showMenu);
+    }
 
     return (
         <header>
@@ -37,14 +40,33 @@ export default function Header() {
                         <li><Link className="shadow" to="/login" >Login</Link></li>
                         <li><Link className="shadow" to="/signup" >Sign up</Link></li>
                     </ul>
-                    <div className="menu-toggler d-md-none ms-auto shadow">
+                    <div onClick={toggleMenu} className="menu-toggler d-md-none ms-auto shadow">
                         <FontAwesomeIcon className="" icon={faBars} size="2x" />
 
                     </div>
                     
+                
                   
 
                 </nav>
+                {
+                        showMenu && 
+                        <ul className="menu shadow p-4">
+                            <li>
+                                <Link exact={true} to="/" activeClassName="active-nav">Home</Link>
+                            </li>
+                    
+                            <li>
+                                <Link to="/cryptos" activeClassName="active-nav">Cryptos</Link>
+                            </li>
+                            <li>
+                                <Link to="/about" activeClassName="active-nav">About</Link>
+                            </li>
+                            <li><Link to="/login" >Login</Link></li>
+                            <li><Link to="/signup" >Sign up</Link></li>
+
+                        </ul>
+                    }
             </div>
         </header>
     )
