@@ -34,6 +34,8 @@ export default function AllCrypto() {
         .catch(error => console.log(error));
     }
 
+
+
     useEffect(() => {
       fetchCryptos();
       window.scrollTo(0, 0);
@@ -51,11 +53,7 @@ export default function AllCrypto() {
         setSelected(parseInt(query.get('p')));
       } 
 
-           
-      if(query.get('q')) {
-        history.push(`/cryptos?q=${query.get('q')}`);
-      }
-    
+   
      
     } , [])
 

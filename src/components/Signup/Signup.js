@@ -10,11 +10,35 @@ export default function Signup() {
         email:'',
         password:'',
         balance: 0,
+        public: true,
     });
 
 
+    const createAccount = () => {
+        fetch(`${process.env.BACKEND}/user`, {
+            method:'POST',
+            mode:'cors',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify(formParams)
+        })
+        .then(res => res.json())
+        .then(data => {
+            localStorage.setItem('userToken',data['userToken']);
+            
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        createAccount();
+
     }
 
 

@@ -5,6 +5,10 @@ import Signup from 'components/Signup/Signup.js';
 import Loader from 'components/Loader/Loader.js';
 import SingleCrypto from 'components/SingleCrypto/SingleCrypto.js';
 import AllCrypto from 'components/AllCrypto/AllCrypto.js';
+
+
+import useQuery from 'hooks/QueryParams.js';
+
 import { 
   BrowserRouter,
   Switch,
@@ -17,7 +21,8 @@ export default function App(props) {
 
   const [loaded, setLoaded] = useState(true);
 
- 
+  
+
 
 
   
@@ -43,7 +48,6 @@ export default function App(props) {
 
           <Route exact path="/cryptos">
             <AllCrypto />
-
           </Route>
         
         </Switch>
