@@ -3,7 +3,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { NavLink as Link, useHistory } from "react-router-dom";
 import "./Header.scss";
+import Modal from 'react-modal';
 
+const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+  
 
 export default function Header() {
 
@@ -12,6 +24,12 @@ export default function Header() {
     const [searchInput, setSearchInput] = useState('');
 
     const history = useHistory();
+
+    const [ modalOpen, setModalOpen ] = useState(true);
+
+    const closeModal = () => {
+      setModalOpen(false);
+    }  
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
@@ -33,6 +51,24 @@ export default function Header() {
 
     return (
         <header>
+               <Modal
+                isOpen={modalOpen}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Example Modal"
+                ariaHideApp={false}
+                >
+                
+                <button onClick={closeModal}>close</button>
+                <div>I am a modal</div>
+                <form>
+                <input />
+                <button>tab navigation</button>
+                <button>stays</button>
+                <button>inside</button>
+                <button>the modal</button>
+                </form>
+            </Modal>
             <div className="container">
                 <nav className="d-flex nav align-items-center">   
                    <div className="brand-title me-5">

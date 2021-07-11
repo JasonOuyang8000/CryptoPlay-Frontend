@@ -7,7 +7,7 @@ import SingleCrypto from 'components/SingleCrypto/SingleCrypto.js';
 import AllCrypto from 'components/AllCrypto/AllCrypto.js';
 
 
-import useQuery from 'hooks/QueryParams.js';
+
 
 import { 
   BrowserRouter,
@@ -17,20 +17,20 @@ import {
 
 
 
+
 export default function App(props) {
 
   const [loaded, setLoaded] = useState(true);
 
-  
 
-
-
-  
 
   return (
 
     
     <BrowserRouter>
+   
+
+  
         {!loaded && <Loader />}
         <Switch>
           <Route exact path="/cryptos/:id">
