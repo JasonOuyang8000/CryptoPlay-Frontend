@@ -30,7 +30,11 @@
     top: -50px;
     display: flex;
     justify-content: center;
-    z-index: 2;
+    z-index: 1;
+}
+
+.ReactModal__Overlay--after-open {
+    z-index: 1;
 }
 
 .section {

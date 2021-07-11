@@ -1,0 +1,24 @@
+.search-card {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+    border-radius: 15px;
+    padding: 10px;
+    background: var(--logo-text-color);
+    color: var(--bg-text-color);
+    text-decoration: none;
+
+    img {
+        height: 64px;
+        width: 64px;
+    }
+
+    h3 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+       
+    }
+}

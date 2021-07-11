@@ -29,7 +29,7 @@ export default function SingleCrypto() {
             setPage(data);
         })
         .catch(error => console.log(error));
-    }, []);
+    }, [ id ]);
 
 
 

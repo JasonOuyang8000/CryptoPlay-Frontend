@@ -14,6 +14,7 @@ const customStyles = {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
+      zIndex: '999',
     },
   };
   
@@ -39,9 +40,12 @@ export default function Header() {
     const handleSearch = (e) => {
         e.preventDefault();
 
-   
+        if (searchInput) {
+            setModalOpen(true);
+        }
         
-        setSearchInput('');
+        return;
+  
 
     }
 
@@ -61,7 +65,8 @@ export default function Header() {
             >
                 <SearchContent 
                     searchInput={searchInput} 
-                    setSearchInput
+                    setSearchInput={setSearchInput}
+                    closeModal={closeModal}
                 />
             </Modal>
             <div className="container">
