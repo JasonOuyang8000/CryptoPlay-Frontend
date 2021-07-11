@@ -2,6 +2,7 @@ import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { NavLink as Link, useHistory } from "react-router-dom";
+import SearchContent from 'components/SearchContent/SearchContent.js';
 import "./Header.scss";
 import Modal from 'react-modal';
 
@@ -25,7 +26,7 @@ export default function Header() {
 
     const history = useHistory();
 
-    const [ modalOpen, setModalOpen ] = useState(true);
+    const [ modalOpen, setModalOpen ] = useState(false);
 
     const closeModal = () => {
       setModalOpen(false);
@@ -38,7 +39,7 @@ export default function Header() {
     const handleSearch = (e) => {
         e.preventDefault();
 
-        history.push(`/cryptos?q=${searchInput}`);
+   
         
         setSearchInput('');
 
@@ -51,23 +52,17 @@ export default function Header() {
 
     return (
         <header>
-               <Modal
-                isOpen={modalOpen}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
-                ariaHideApp={false}
-                >
-                
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
-                <form>
-                <input />
-                <button>tab navigation</button>
-                <button>stays</button>
-                <button>inside</button>
-                <button>the modal</button>
-                </form>
+            <Modal
+            isOpen={modalOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+            ariaHideApp={false}
+            >
+                <SearchContent 
+                    searchInput={searchInput} 
+                    setSearchInput
+                />
             </Modal>
             <div className="container">
                 <nav className="d-flex nav align-items-center">   
